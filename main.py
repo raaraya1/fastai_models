@@ -1,6 +1,6 @@
 import streamlit as st
-from FastaiCourse.cat_vs_dog.cat_vs_dog import *
-from FastaiCourse.sentiment_classifier.sent_class import *
+from cat_vs_dog.cat_vs_dog import *
+from sentiment_classifier.sent_class import *
 import re
 import os
 from custom_streamlit import custom
