@@ -19,8 +19,10 @@ class cat_vs_dog_st():
 
     def model(self):
         # para cargar el modelo
-        temp = pathlib.PosixPath
-        pathlib.PosixPath = pathlib.WindowsPath
+        #temp = pathlib.PosixPath
+        #pathlib.PosixPath = pathlib.WindowsPath
+        plt = platform.system()
+        if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
         path = Path.cwd()
         file_id = '1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq'
