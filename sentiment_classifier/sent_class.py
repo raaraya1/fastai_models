@@ -22,10 +22,10 @@ def sentiment_classifier():
     download_file_from_google_drive(file_id, destination)
 
     # correcciones de ruta
-    #temp = pathlib.PosixPath
     #pathlib.PosixPath = pathlib.WindowsPath
     plt = platform.system()
     if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
+    temp = pathlib.PosixPath
 
 
     # cargando el modelo

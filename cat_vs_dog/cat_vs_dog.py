@@ -19,15 +19,16 @@ class cat_vs_dog_st():
 
     def model(self):
         # para cargar el modelo
-        #temp = pathlib.PosixPath
         #pathlib.PosixPath = pathlib.WindowsPath
         plt = platform.system()
         if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
+        temp = pathlib.PosixPath
 
         path = Path.cwd()
         file_id = '1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq'
         destination = 'm_cat_vs_dog.plk'
         download_file_from_google_drive(file_id, destination)
+        st.write(str(path))
 
         path = Path(str(path) + '\m_cat_vs_dog.plk')
         learn = load_learner(path)
