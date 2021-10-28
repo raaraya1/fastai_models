@@ -28,4 +28,5 @@ def fastai_models():
     elif model_name == 'sentiment_classifier':
         sentiment_classifier()
 
-#fastai_models()
+if __name__ == '__main__':
+    fastai_models()
