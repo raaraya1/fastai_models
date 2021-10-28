@@ -1,7 +1,12 @@
 import streamlit as st
 #import fastbook
 #from fastai.vision.all import *
+
+to_exclude = ['spacy.lemmatizer']
 from fastai.text.all import *
+for name in to_exclude:
+    __builtins__.globals().pop(name)
+
 import pathlib
 import numpy as np
 import googletrans
