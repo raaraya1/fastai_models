@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 import requests
 import urllib.request
-from FastaiCourse.request_from_drive import *
+from request_from_drive import *
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
 

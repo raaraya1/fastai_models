@@ -8,7 +8,7 @@ import googletrans
 from googletrans import Translator
 import requests
 import urllib.request
-from FastaiCourse.request_from_drive import *
+from request_from_drive import *
 #notas (necesario instalar estas versiones)
 #pip install spacy==2.2.4
 #pip install googletrans==4.0.0-rc1
