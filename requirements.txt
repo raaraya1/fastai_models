@@ -1,4 +1,4 @@
---upgrade pip
+python -m pip install --upgrade pip
 streamlit==1.0.0
 requests==2.24.0
 #numpy==1.19.2
