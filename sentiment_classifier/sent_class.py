@@ -1,5 +1,5 @@
 import streamlit as st
-import fastbook
+#import fastbook
 #from fastai.vision.all import *
 from fastai.text.all import *
 import pathlib
