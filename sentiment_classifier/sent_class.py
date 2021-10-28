@@ -9,11 +9,13 @@ from googletrans import Translator
 import requests
 import urllib.request
 from request_from_drive import *
+from custom_streamlit import custom
 #notas (necesario instalar estas versiones)
 #pip install spacy==2.2.4
 #pip install googletrans==4.0.0-rc1
 
 def sentiment_classifier():
+    custom()
     # directorio de la carpeta
     path = Path.cwd()
 
