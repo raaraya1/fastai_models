@@ -5,3 +5,4 @@ numpy==1.19.2
 torch==1.8.1+cpu
 torchvision==0.9.1+cpu
 fastai>=2.3.1
+googletrans==4.0.0-rc1
