@@ -29,7 +29,7 @@ def sentiment_classifier():
 
 
     # cargando el modelo
-    learn = load_learner(str(path) + "\m_sent_class.pkl")
+    learn = load_learner(str(path) + "/m_sent_class.pkl")
 
     # Llamar al traductor
     traductor = Translator()

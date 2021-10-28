@@ -7,6 +7,7 @@ import numpy as np
 import requests
 import urllib.request
 from request_from_drive import *
+import os
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
 
@@ -29,8 +30,9 @@ class cat_vs_dog_st():
         destination = 'm_cat_vs_dog.plk'
         download_file_from_google_drive(file_id, destination)
         st.write(str(path))
+        st.write(str(os.listdir()))
 
-        path = Path(str(path) + '\m_cat_vs_dog.plk')
+        path = Path(str(path) + '/m_cat_vs_dog.plk')
         learn = load_learner(path)
 
         # Haciendo la prediccion
