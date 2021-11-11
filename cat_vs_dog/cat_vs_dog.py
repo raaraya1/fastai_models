@@ -20,9 +20,32 @@ class cat_vs_dog_st():
         pass
 
     def model(self):
-        custom()
+
+
+        st.write('''
+        ## **CAT** vs **DOG**
+
+        Este es el modelo introductorio del curso. En este nos enseñan, de una
+        manera corta y sencilla, la manera de elaborar un clasificador que logre
+        distinguir entre la imagen de un gato o un perro.
+
+        ### Datos
+
+        La base de datos utilizada se extrajo de le siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
+        - 7349 imágenes en total
+
+        ### Modelo
+
+        Para la elaboración del modelo se utilizó uno ya pre-entrenado con otro set
+        de imágenes. Este se puede descargar en el siguiente enlace https://download.pytorch.org/models/resnet34-b627a593.pth
+
+        Así, una de las primeras particularidades que nos enseñan en el curso es
+        que podemos hacer uso de modelos ya pre-entrenados y ajustarlos a nuestros
+        objetivos.
+
+        ### DEMO
+        ''')
         # para cargar el modelo
-        #pathlib.PosixPath = pathlib.WindowsPath
         plt = platform.system()
         if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
         temp = pathlib.PosixPath
@@ -37,14 +60,19 @@ class cat_vs_dog_st():
         path = Path(str(path) + '/m_cat_vs_dog.plk')
         learn = load_learner(path)
 
+        # DEMO
+
         # Haciendo la prediccion
-        archivo = st.file_uploader('Colaca la imagen de un gato o perro')
+        st.write('''
+        #### Coloca la imagen de un **gato** o un **perro**.
+        ''')
+        archivo = st.file_uploader('')
         if archivo:
             st.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
             prob = np.round(prediccion[2][1]*100, 0)
             if prediccion[0] == 'True':
-                st.write(f'Se predice que es un gato con una probabilidad del {prob}%')
+                st.write(f'Se predice que es un **gato** con una probabilidad del {prob}%')
             else:
-                st.write(f'Se predice que es un perro con una probabilidad del {100-prob}%')
+                st.write(f'Se predice que es un **perro** con una probabilidad del {100-prob}%')
