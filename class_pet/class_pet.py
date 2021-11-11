@@ -8,7 +8,7 @@ import urllib.request
 from request_from_drive import *
 import os
 from custom_streamlit import custom
-from fastbook import *
+#from fastbook import *
 # https://drive.google.com/file/d/1J7Bdg5cj_2huVQedjLEgXR1KJrYarwjb/view?usp=sharing
 
 class class_pet_st():
@@ -39,7 +39,7 @@ class class_pet_st():
             st.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
-            st.write(str(prediccion))
+            #st.write(str(prediccion))
             prob = int(np.round(torch.max(prediccion[2])*100, 0))
             st.write(f'''
             Se predice que es la raza **{prediccion[0]}** con una probablidad del **{prob} % **''')
