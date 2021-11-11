@@ -15,7 +15,7 @@ from custom_streamlit import custom
 #pip install googletrans==4.0.0-rc1
 
 def sentiment_classifier():
-    custom()
+    #custom()
     # directorio de la carpeta
     path = Path.cwd()
 
