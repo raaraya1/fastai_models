@@ -8,7 +8,7 @@ import urllib.request
 from request_from_drive import *
 import os
 from custom_streamlit import custom
-from fastbook import *
+#from fastbook import *
 #https://drive.google.com/file/d/1VKUk-t-1jswDlZDlak8nj7giqc9oD8r2/view?usp=sharing
 
 def get_x(r):

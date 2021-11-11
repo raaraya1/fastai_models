@@ -8,7 +8,7 @@ import urllib.request
 from request_from_drive import *
 import os
 from custom_streamlit import custom
-from fastbook import *
+#from fastbook import *
 from fastai.collab import *
 from fastai.tabular.all import *
 import matplotlib

@@ -8,7 +8,7 @@ import urllib.request
 from request_from_drive import *
 import os
 from custom_streamlit import custom
-from fastbook import *
+#from fastbook import *
 #https://drive.google.com/file/d/13q3ak0bJFjg53KNIxis99YSWjCcig1di/view?usp=sharing
 #recordar añadir streamlit-drawable-canvas==0.8.0 a requeriments
 from streamlit_drawable_canvas import st_canvas
