@@ -16,6 +16,29 @@ class breed_pet_st():
         pass
 
     def model(self):
+        st.write('''
+        ## Clasificador de Razas
+
+        El banco de imágenes utilizado para elaborar el clasificador de gatos y
+        perros, contemplaba dentro de sus objetivos, hacer la distinción entre
+        razas de gatos y razas de perros. Así, para este modelo se utiliza el
+        mismo banco de imágenes, pero haciendo la distinción entre razas de mascotas.
+
+
+        ### Datos
+
+        La base de datos utilizada se extrajo del siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
+        - 7349 imágenes en total
+
+        ### Modelo
+
+        Para la elaboración del modelo se utilizó uno ya pre-entrenado con otro set
+        de imágenes. Este se puede descargar en el siguiente enlace https://download.pytorch.org/models/resnet34-b627a593.pth
+
+        ### DEMO
+
+        ''')
+
         #custom()
         # para cargar el modelo
         #pathlib.PosixPath = pathlib.WindowsPath
@@ -34,9 +57,11 @@ class breed_pet_st():
         learn = load_learner(path)
 
         # Haciendo la prediccion
-        archivo = st.file_uploader('Colaca la imagen de una raza de gato o perro')
+        st.write('**Coloca la imagen de un gato o perro**')
+        archivo = st.file_uploader('')
+        col1, col2, col3 = st.columns(3)
         if archivo:
-            st.image(archivo, width=128)
+            col2.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
             #st.write(str(prediccion))
