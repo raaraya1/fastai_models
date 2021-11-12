@@ -31,7 +31,7 @@ class cat_vs_dog_st():
 
         ### Datos
 
-        La base de datos utilizada se extrajo de le siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
+        La base de datos utilizada se extrajo de el siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
         - 7349 imágenes en total
 
         ### Modelo
@@ -67,8 +67,9 @@ class cat_vs_dog_st():
         #### Coloca la imagen de un **gato** o un **perro**.
         ''')
         archivo = st.file_uploader('')
+        col1, col2, col3 = st.columns(3)
         if archivo:
-            st.image(archivo, width=128)
+            col2.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
             prob = np.round(prediccion[2][1]*100, 0)
