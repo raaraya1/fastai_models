@@ -17,6 +17,39 @@ class bear_class_st():
         pass
 
     def model(self):
+
+        st.write('''
+        ## Clasificador de Osos
+
+        Este modelo, al igual que con el modelo de clasificación de gatos y perros,
+        utiliza un modelo de red convolucional pre-entrenado. Así, lo que se hace es
+        cambiar la salida del modelo adaptándolo a esta nueva tarea de **diferenciar
+        entre imágenes de Osos Grizzlies, Osos Negros y Osos Teddy**.
+
+        En particular, uno de los objetivos propuestos para la segunda clase del curso
+        era el de elaborar un clasificador propio, construyendo, primeramente, un
+        banco de imágenes para luego reentrenar el modelo.
+
+        En consecuencia, te comento que si buscas una manera alternativa para generar
+        este banco de imágenes, puedes como lo hice yo en mis notas del curso (con
+        las bibliotecas de **BeautifulSoup o MechanicalSoup**).
+
+        ### Datos
+
+        Las imágenes fueron extraídas mediante web scraping con el motor de
+        búsqueda de Bing y la utilización de la biblioteca BeatifulSoup.
+
+        - **Grizzly bear**: 150 - 170 imágenes
+        - **Black bear**: 150 - 160 imágenes
+        - **Teddy bear**: 140 - 140 imágenes
+
+        ### Modelo
+
+        **resnet18**: Red neuronal convolucional pre-entrenada extraída desde:
+        https://download.pytorch.org/models/resnet18-f37072fd.pth
+
+        ### DEMO
+        ''')
         #custom()
         # para cargar el modelo
         #pathlib.PosixPath = pathlib.WindowsPath
@@ -33,13 +66,15 @@ class bear_class_st():
         learn = load_learner(path)
 
         # Haciendo la prediccion
-        archivo = st.file_uploader('Colaca la imagen de un gato o perro')
+        st.write('**Coloca la imagen de un oso (Grizzly, Black o Teddy)**')
+        archivo = st.file_uploader('')
+        col1, col2, col3 = st.columns(3)
         if archivo:
-            st.image(archivo, width=128)
+            col2.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
             prob = int(np.round(torch.max(prediccion[2])*100, 0))
-            st.write(str(prediccion))
+            #st.write(str(prediccion))
             st.write(f'''
             Se predice que la clase es **{prediccion[0]}** con una probabilidad del **{prob}%**
             ''')

@@ -11,7 +11,7 @@ from custom_streamlit import custom
 #from fastbook import *
 # https://drive.google.com/file/d/1J7Bdg5cj_2huVQedjLEgXR1KJrYarwjb/view?usp=sharing
 
-class class_pet_st():
+class breed_pet_st():
     def __init__(self):
         pass
 
@@ -25,12 +25,12 @@ class class_pet_st():
 
         path = Path.cwd()
         file_id = '1J7Bdg5cj_2huVQedjLEgXR1KJrYarwjb'
-        destination = 'pet_class.plk'
+        destination = 'breed_class.plk'
         download_file_from_google_drive(file_id, destination)
         #st.write(str(path))
         #st.write(str(os.listdir()))
 
-        path = Path(str(path) + '/pet_class.plk')
+        path = Path(str(path) + '/breed_class.plk')
         learn = load_learner(path)
 
         # Haciendo la prediccion

@@ -1,7 +1,7 @@
 import streamlit as st
 from cat_vs_dog.cat_vs_dog import *
 from sentiment_classifier.sent_class import *
-from class_pet.class_pet import *
+from breed_pet.breed_pet import *
 from bears_class.bear_class import *
 from multi_class.multi_class import *
 from number_class.number_class import *
@@ -41,7 +41,7 @@ def fastai_models():
                                      ['cat_vs_dog',
                                      'sentiment_classifier',
                                      'bears_class',
-                                     'class_pet',
+                                     'breed_pet',
                                      'multi_class',
                                      'number_class',
                                      'recomendation_system'])
@@ -52,8 +52,8 @@ def fastai_models():
     elif model_name == 'sentiment_classifier':
         sentiment_classifier()
 
-    elif model_name == 'class_pet':
-        class_pet_st().model()
+    elif model_name == 'breed_pet':
+        breed_pet_st().model()
 
     elif model_name == 'bears_class':
         bear_class_st().model()
