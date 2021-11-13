@@ -27,6 +27,55 @@ class multi_class_st():
         pass
 
     def model(self):
+
+        st.write('''
+        ## Multiclass Classification Model
+
+        Este modelo, al igual que el resto de los modelos de clasificación de imágenes
+        anteriormente presentados, hace uso de una red neuronal convolucional previamente entrenada
+        para luego ser ajustada en sus últimas capas (incluyendo la capa de salida)
+        a nuestros objetivos.
+
+        **Nota:**
+        Si tu interés es elaborar modelos de clasificación con más de dos categorías,
+        entonces te recomiendo que prestes atención al concepto de **Binary Cross Entropy**,
+        ya que esta es la función de perdida utilizada en este modelo.
+
+        ## Datos
+
+        El banco de imágenes es extraído del siguiente enlace: http://host.robots.ox.ac.uk/pascal/VOC/voc2007/
+        Así, las imágenes se encuentran ordenas bajo las siguientes categorías:
+
+        - Aeroplanes
+        - Bicycles
+        - Birds
+        - Boats
+        - Bottles
+        - Buses
+        - Cars
+        - Cats
+        - Chairs
+        - Cows
+        - Dining tables
+        - Dogs
+        - Horses
+        - Motorbikes
+        - People
+        - Potted plants
+        - Sheep
+        - Sofas
+        - Trains
+        - TV/Monitors
+
+        ## Modelo
+
+        **resnet18**: Red neuronal convolucional pre-entrenada extraída desde:
+        https://download.pytorch.org/models/resnet18-f37072fd.pth
+
+        ## DEMO
+
+
+        ''')
         #custom()
         # para cargar el modelo
         plt = platform.system()
@@ -44,13 +93,15 @@ class multi_class_st():
         learn = load_learner(path)
 
         # Haciendo la prediccion
-        archivo = st.file_uploader('Colaca la imagen de una raza de gato o perro')
+        st.write('**Colaca la imagen de alguna de las categorias anteriores**')
+        archivo = st.file_uploader('')
+        col1, col2, col3 = st.columns(3)
         if archivo:
-            st.image(archivo, width=128)
+            col2.image(archivo, width=128)
             img = PILImage.create(archivo)
             prediccion = learn.predict(img)
             prob = int(np.round(torch.max(prediccion[2])*100, 0))
-            st.write(str(prediccion))
+            #st.write(str(prediccion))
             st.write(f'''
-            Se predice que es un {prediccion[0]} con una probabilidad del {prob}%
+            Se predice que es un **{prediccion[0]}** con una probabilidad del **{prob}%**
             ''')
