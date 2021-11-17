@@ -174,8 +174,8 @@ class tabular_adult_st():
         if prediccion[1].item() == 0:
             prob = int(np.round(prediccion[2][0].item()*100, 0))
             #st.write(str(prob))
-            st.write(f'Se predice que la persona tiene un ingreso **>= 50k** con **{prob}%** de probabilidad')
+            st.write(f'Se predice que la persona tiene un ingreso **< 50k** con **{prob}%** de probabilidad')
         elif prediccion[1].item() == 1:
             prob = int(np.round(prediccion[2][1].item()*100, 0))
 
-            st.write(f'Se predice que la persona tiene un ingreso **< 50k** con **{prob}%** de probabilidad')
+            st.write(f'Se predice que la persona tiene un ingreso **>= 50k** con **{prob}%** de probabilidad')
