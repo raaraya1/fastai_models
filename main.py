@@ -7,6 +7,7 @@ from multi_class.multi_class import *
 from number_class.number_class import *
 from recomendation_system.recomendation_system import *
 from tabular_adult.tabular_adult import *
+from tabular_bluebook.tabular_bluebook import *
 import re
 import os
 from custom_streamlit import custom
@@ -46,7 +47,8 @@ def fastai_models():
                                      'multi_class',
                                      'number_class',
                                      'recomendation_system',
-                                     'tabular_adult'])
+                                     'tabular_adult',
+                                     'tabular_bluebook'])
 
     if model_name == 'cat_vs_dog':
         cat_vs_dog_st().model()
@@ -71,6 +73,10 @@ def fastai_models():
 
     elif model_name == 'tabular_adult':
         tabular_adult_st().model()
+
+    elif model_name == 'tabular_bluebook':
+        tabular_bluebook_st().model()
+
 
 
 # agregar google analytics
