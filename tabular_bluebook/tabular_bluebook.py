@@ -165,30 +165,6 @@ class tabular_bluebook_st():
 
             st.graphviz_chart(tree_graph)
 
-            # para mayor informacion
-            with st.expander("Ver mas detalles"):
-                path = Path.cwd()
-                path = Path(str(path) + '/graphviz/')
-                os.environ["PATH"] += os.pathsep + str(path)
-
-                #os.environ["PATH"] += os.pathsep + 'C:/ProgramData/Anaconda3/Library/bin/graphviz/'
-                samp_idx = np.random.permutation(len(y))[:500]
-                dep_var = 'SalePrice'
-                viz = dtreeviz(m, xs.iloc[samp_idx], y.iloc[samp_idx], xs.columns, dep_var,
-                        fontname='DejaVu Sans', scale=1.6, label_fontsize=10,
-                        orientation='LR')
-
-                def svg_write(svg, center=True):
-                    b64 = base64.b64encode(svg.encode("utf-8")).decode("utf-8")
-                    css_justify = "center" if center else "left"
-                    css = f'<p style="text-align:center; display: flex; justify-content: {css_justify};">'
-                    html = f'{css}<img src="data:image/svg+xml;base64,{b64}"/>'
-                    st.write(html, unsafe_allow_html=True)
-
-                svg=viz.svg()
-                svg_write(svg)
-
-
             col1, col2, col3 = st.columns(3)
             error_dt = m_rmse(m, valid_xs, valid_y)
             col2.metric(label='Validation Error', value=error_dt)
