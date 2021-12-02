@@ -92,7 +92,7 @@ class tabular_bluebook_st():
 
 
         ### DEMO
-        
+
         ''')
 
 
@@ -167,7 +167,11 @@ class tabular_bluebook_st():
 
             # para mayor informacion
             with st.expander("Ver mas detalles"):
-                os.environ["PATH"] += os.pathsep + 'C:/ProgramData/Anaconda3/Library/bin/graphviz/'
+                path = Path.cwd()
+                path = Path(str(path) + '/graphviz/')
+                os.environ["PATH"] += os.pathsep + str(path)
+
+                #os.environ["PATH"] += os.pathsep + 'C:/ProgramData/Anaconda3/Library/bin/graphviz/'
                 samp_idx = np.random.permutation(len(y))[:500]
                 dep_var = 'SalePrice'
                 viz = dtreeviz(m, xs.iloc[samp_idx], y.iloc[samp_idx], xs.columns, dep_var,
