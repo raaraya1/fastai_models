@@ -31,7 +31,7 @@ class cat_vs_dog_st():
 
         ### Datos
 
-        La base de datos utilizada se extrajo de el siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
+        La base de datos utilizada se extrajo del siguiente enlace: http://www.robots.ox.ac.uk/~vgg/data/pets/
         - 7349 imágenes en total
 
         ### Modelo

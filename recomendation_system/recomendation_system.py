@@ -93,11 +93,11 @@ class recomendation_system_st():
         ### DEMO
 
         Quizás, más interesante que observar las predicciones sobre las puntuaciones
-        de los usuarios, puede ser observar como los títulos de las películas son ordenados en función de los factores latentes.
+        de los usuarios, puede ser observar cómo los títulos de las películas son ordenados en función de los factores latentes.
 
         El siguiente grafico muestra, de manera tridimensional, como estos títulos
         son agrupados. Así, aquellos títulos que se encuentren más cercanos corresponden
-        a aquellas películas que comparten mas factores latentes en común.
+        a aquellas películas que comparten más factores latentes en común.
 
         ''')
 
