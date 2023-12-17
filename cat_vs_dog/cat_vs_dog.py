@@ -79,7 +79,7 @@ class cat_vs_dog_st():
         path = Path(str(path) + '/m_cat_vs_dog.plk')
         st.text(path)
         url = "https://drive.google.com/u/0/uc?id=1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq"
-        gdown.download(url, path, quiet=False)
+        gdown.download(url, destination, quiet=False)
         
         learn = load_learner_(path)
 
