@@ -11,8 +11,8 @@ import os
 from custom_streamlit import custom
 from functools import partial
 import pickle
-pickle.load = partial(pickle.load, encoding="latin1")
-pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
+#pickle.load = partial(pickle.load, encoding="latin1")
+#pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
@@ -63,7 +63,7 @@ class cat_vs_dog_st():
         #st.write(str(os.listdir()))
 
         path = Path(str(path) + '/m_cat_vs_dog.plk')
-        learn = load_learner(path)
+        learn = load_learner(path, encoding="latin1")
 
         # DEMO
 
