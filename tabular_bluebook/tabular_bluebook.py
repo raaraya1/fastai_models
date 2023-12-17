@@ -22,7 +22,6 @@ import base64
 import matplotlib.pyplot as plt
 import fastai
 from functools import partial
-import pickle.Unpickler
 #https://drive.google.com/file/d/1h2VoVGOE2GrpMdj0c_J26xfFLLFBKWpP/view?usp=sharing
 
 
