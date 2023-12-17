@@ -11,11 +11,24 @@ import os
 from custom_streamlit import custom
 from functools import partial
 import pickle
-#pickle.load = partial(pickle.load, encoding="latin1")
-#pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
-#https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
+
+def load_learner_(fname, cpu=True, pickle_module=pickle):
+    "Load a `Learner` object in `fname`, by default putting it on the `cpu`"
+    distrib_barrier()
+    map_loc = 'cpu' if cpu else default_device()
+    try: res = torch.load(fname, map_location=map_loc, pickle_module=pickle_module, encoding='latin1')
+    except AttributeError as e: 
+        e.args = [f"Custom classes or functions exported with your `Learner` not available in namespace.\Re-declare/import before loading:\n\t{e.args[0]}"]
+        raise
+    if cpu: 
+        res.dls.cpu()
+        if hasattr(res, 'channels_last'): res = res.to_contiguous(to_fp32=True)
+        elif hasattr(res, 'mixed_precision'): res = res.to_fp32()
+        elif hasattr(res, 'non_native_mixed_precision'): res = res.to_non_native_fp32()
+    return res
+
 
 def is_cat(x):
     return x[0].isupper()
@@ -63,10 +76,7 @@ class cat_vs_dog_st():
         #st.write(str(os.listdir()))
 
         path = Path(str(path) + '/m_cat_vs_dog.plk')
-        custom_pickle = pickle
-        custom_pickle.load.encoding="latin1"
-        custom_pickle.Unpickler.encoding="latin1"
-        learn = load_learner(path, pickle_module=custom_pickle)
+        learn = load_learner_(path)
 
         # DEMO
 
