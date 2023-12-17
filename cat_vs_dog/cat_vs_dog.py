@@ -9,6 +9,11 @@ import urllib.request
 from request_from_drive import *
 import os
 from custom_streamlit import custom
+from functools import partial
+import pickle
+pickle.load = partial(pickle.load, encoding="latin1")
+pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
+#https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
 
