@@ -11,6 +11,7 @@ import os
 from custom_streamlit import custom
 from functools import partial
 import pickle
+import gdown
 #https://drive.google.com/file/d/1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq/view?usp=sharing
 #1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq
 
@@ -71,11 +72,14 @@ class cat_vs_dog_st():
         path = Path.cwd()
         file_id = '1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq'
         destination = 'm_cat_vs_dog.plk'
-        download_file_from_google_drive(file_id, destination)
+        #download_file_from_google_drive(file_id, destination)
         #st.write(str(path))
         #st.write(str(os.listdir()))
 
         path = Path(str(path) + '/m_cat_vs_dog.plk')
+        url = "https://drive.google.com/u/0/uc?id=1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq"
+        gdown.download(url, path, quiet=False)
+        
         learn = load_learner_(path)
 
         # DEMO
