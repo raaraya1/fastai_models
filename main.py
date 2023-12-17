@@ -74,8 +74,8 @@ def fastai_models():
     elif model_name == 'tabular_adult':
         tabular_adult_st().model()
 
-    elif model_name == 'tabular_bluebook':
-        tabular_bluebook_st().model()
+    #elif model_name == 'tabular_bluebook':
+    #    tabular_bluebook_st().model()
 
 
 if __name__ == '__main__':
