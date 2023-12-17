@@ -22,10 +22,6 @@ import base64
 import matplotlib.pyplot as plt
 import fastai
 from functools import partial
-import pickle
-pickle.load = partial(pickle.load, encoding="latin1")
-pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
-# datos
 #https://drive.google.com/file/d/1h2VoVGOE2GrpMdj0c_J26xfFLLFBKWpP/view?usp=sharing
 
 
