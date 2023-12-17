@@ -7,7 +7,7 @@ from multi_class.multi_class import *
 from number_class.number_class import *
 from recomendation_system.recomendation_system import *
 from tabular_adult.tabular_adult import *
-from tabular_bluebook.tabular_bluebook import *
+#from tabular_bluebook.tabular_bluebook import *
 import re
 import os
 from custom_streamlit import custom
