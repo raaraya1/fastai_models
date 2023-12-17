@@ -22,8 +22,9 @@ import base64
 import matplotlib.pyplot as plt
 import fastai
 from functools import partial
-pickle.load = partial(pickle.load, encoding='ASCII')
-pickle.Unpickler = partial(pickle.Unpickler, encoding='ASCII')
+import pickle as pc
+pickle.load = pc.load
+pickle.Unpickler = pc.Unpickler
 #https://drive.google.com/file/d/1h2VoVGOE2GrpMdj0c_J26xfFLLFBKWpP/view?usp=sharing
 
 
