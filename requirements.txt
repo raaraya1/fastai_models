@@ -13,3 +13,4 @@ dtreeviz==1.3.2
 fastbook==0.0.16
 graphviz==0.17
 python-dotenv==0.18.0
+gdown
