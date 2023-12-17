@@ -19,7 +19,7 @@ def load_learner_(fname, cpu=True, pickle_module=pickle):
     "Load a `Learner` object in `fname`, by default putting it on the `cpu`"
     distrib_barrier()
     map_loc = 'cpu' if cpu else default_device()
-    try: res = torch.load(fname, map_location=map_loc, encoding='latin1')
+    try: res = torch.load(fname, map_location=map_loc, encoding='ascii')
     except AttributeError as e: 
         e.args = [f"Custom classes or functions exported with your `Learner` not available in namespace.\Re-declare/import before loading:\n\t{e.args[0]}"]
         raise
@@ -76,11 +76,10 @@ class cat_vs_dog_st():
         #st.write(str(path))
         #st.write(str(os.listdir()))
 
-        path = Path(str(path) + '/m_cat_vs_dog.plk')
-        st.text(path)
+        path = Path(str(path) + '/m_cat_vs_dog.plk')        
         url = "https://drive.google.com/u/0/uc?id=1_pyJdn4pIIp5UVU1poidRh0oiE5iTGNq"
         gdown.download(url, destination, quiet=False)
-        
+        st.text(path)
         learn = load_learner_(path)
 
         # DEMO
