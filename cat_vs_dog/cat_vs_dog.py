@@ -63,7 +63,10 @@ class cat_vs_dog_st():
         #st.write(str(os.listdir()))
 
         path = Path(str(path) + '/m_cat_vs_dog.plk')
-        learn = load_learner(path, encoding="latin1")
+        custom_pickle = pickle()
+        custom_pickle.load = partial(custom_pickle.load, encoding="latin1")
+        custom_pickle.Unpickler = partial(custom_pickle.Unpickler, encoding="latin1")
+        learn = load_learner(path, pickle_module=custom_pickle)
 
         # DEMO
 
