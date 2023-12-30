@@ -1,4 +1,4 @@
 # fastai_models
-fastai visualization models with streamlit
+fastai visualization models with hugginface
 
-https://share.streamlit.io/raaraya1/fastai_models/main/main.py
+https://huggingface.co/spaces/raaraya/Fastai_Demo
